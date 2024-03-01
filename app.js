@@ -1,4 +1,4 @@
-let quotes = [
+let defaultQuotes = [
     "Be yourself; everyone else is already taken.",
     "To live is the rarest thing in the world. Most people exist, that is all.",
     "True friends stab you in the front.",
@@ -100,3 +100,17 @@ let quotes = [
     "Lost wealth may be replaced by industry, lost knowledge by study, lost health by temperance or medicine, but lost time is gone forever.",
     "Life will always be to a large extent what we ourselves make it.",
 ];
+
+function main() {
+    const newQuoteBtn = document.getElementById('new-quote-btn');
+    const quoteBody = document.getElementById('quote-body');
+
+    newQuoteBtn.addEventListener('click', function () {
+        const index = Math.floor(Math.random() * defaultQuotes.length);
+        console.log(index);
+        const quote = defaultQuotes[index]
+        quoteBody.innerText = quote;
+    })
+}
+
+main()
